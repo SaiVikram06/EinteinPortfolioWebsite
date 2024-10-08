@@ -1,0 +1,222 @@
+body {
+    background-color: #D9D8D2; 
+    color: #0D0D0D;
+}
+
+.container {
+    max-width: 1200px; 
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 0.2fr 0.6fr 0.6fr 0.6fr 0.2fr; 
+    margin-left: auto;  
+    margin-right: auto;
+    grid-template-areas: 
+        "header header header header" 
+        "img-area aboutme aboutme aboutme" 
+        "papers papers papers papers"
+        "hobbies hobbies blogs blogs" 
+        "gallery gallery gallery gallery" 
+        "footer footer footer footer"; 
+    color: #0D0D0D;
+    grid-gap: 0.5rem; 
+}
+
+header {
+    grid-area: header;
+}
+
+nav {
+    background-color: #4D7365;
+    padding: 10px; 
+}
+
+nav a {
+    display: inline-block; 
+    padding: 10px 35px;
+    margin-right: 50px;
+    color: #FFFFFF; 
+    text-decoration: none; 
+    background-color: #0D0D0D; 
+    border-radius: 4px; 
+}
+
+nav a:hover {
+    background-color: #F6F5F5;
+    color: #4D7365; 
+}
+
+#img-area {
+    grid-area: img-area; 
+    text-align: center; 
+    background-color: #D9D8D2;
+}
+
+#img-area img {
+    width: 190px; 
+    height: 190px;
+    margin-top: 10px;
+    border: 4px solid #F6F5F5; 
+}
+
+#img-area h5 {
+    margin-top: 3px; 
+    margin-bottom: 2px; 
+}
+
+#aboutme {
+    grid-area: aboutme; 
+    background-color: #4D7365; 
+    text-align: left;
+}
+
+#aboutme h4 {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#aboutme a{
+    font-weight: bold;
+    color: rgb(47, 60, 160);
+}
+
+#gallery {
+    grid-area: gallery; 
+    background-color: #4D7365; 
+    padding: 10px; 
+}
+
+#gallery h4 {
+    margin: 0;
+    text-align: center;
+}
+
+.gallery-container {
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
+    gap: 30px; 
+    padding: 10px;    
+}
+
+.gallery-image {
+    width: 100%; 
+    height: 200px; 
+    border-radius: 8px; 
+}
+
+#papers {
+    display: grid;
+    
+    background-color: #4D7365;
+    grid-area: papers; 
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px; 
+    height: auto; 
+}
+
+#papers h4 {
+    text-align: center; 
+    margin: 5px;
+    grid-column: span 3; 
+}
+
+.Paper_publish {
+    background-color: #74a090;
+    border: 1px solid #C1C3C5; 
+    border-radius: 8px; 
+    text-align: center; 
+    color: #0D0D0D;
+    height: auto;
+    margin: 5px;
+}
+
+.Paper_publish h4 {
+    margin: 0;
+}
+
+.Paper_publish p {
+    text-align: left;
+    padding: 5px;
+}
+
+.paper-icon {
+    width: 80px; 
+    height: 80px; 
+    padding: 5px;
+}
+
+#hobbies {
+    grid-area: hobbies; 
+    background-color: #4D7365;  
+    padding: 10px; 
+}
+
+#hobbies h4 {
+    margin: 0;
+    text-align: center;
+}
+
+#blogs {
+    grid-area: blogs; 
+    background-color: #4D7365; 
+    padding: 10px; 
+}
+
+#blogs h4 {
+    margin: 0;
+    text-align: center;
+}
+
+#blogs a{
+     font-weight: bold;
+    color: rgb(47, 60, 160);
+}
+
+footer {
+    grid-area: footer; 
+    background-color: #4D7365;
+    text-align: center; 
+    padding: 10px; 
+}
+
+#copyright h4 {
+    margin: 0; 
+}
+
+#copyright p {
+    margin: 0; 
+    padding: 5px 0; 
+}
+
+/* Responsive Design */
+.menu .iconn {
+    display: none; 
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #0D0D0D;
+    color: #fff;
+}
+
+@media screen and (max-width: 500px) {
+    .menu {
+        grid-template-columns: auto;  
+        grid-template-rows: auto;
+    }
+    
+    .menu .iconn {
+        display: block; 
+    }
+  
+    .menu a:not(.iconn) {
+        display: none;
+    }
+
+    .menu.responsive a {
+        display: block; 
+    }
+}
+
+
+#aboutme:target, #gallery:target, #papers:target, #hobbies:target, #blogs:target, #copyright:target {
+    background-color: #A6A18A 
+}
